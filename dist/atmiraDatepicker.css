@@ -1,0 +1,40 @@
+at-date{position:relative;}
+at-date > button{vertical-align: top;margin-top:5px;}
+at-date > div{display: inline-block!important;}
+at-date input{height:25px!important;font-size:11px!important;width:85px;border:1px solid #dadada;padding: 2px 5px!important;color:#35261a;box-shadow:none;}
+at-date .at-datepicker{position: absolute !important;top:-3px !important;left: 82px !important;box-sizing: border-box;font-family: sans-serif;background-color:#f7f7f7;font-size: 12px;box-shadow: 3px 4px 5px 0 #c4c4c4;border: 1px solid #d2d2d2;width: 208px;z-index:10;}
+at-date .at-datepicker .at-datepicker-header{padding: 10px 0 5px 0;border-bottom: 1px solid #d2d2d2;text-align: center; margin-bottom: 5px;}
+at-date .at-datepicker .at-datepicker-header .bki-close{font-size: 10px;position: absolute;right: 3px;top: 2px;cursor:pointer;}
+at-date .at-datepicker .at-datepicker-header .bki-close:hover:before{background-color: #968271;color:#fff;}
+at-date .at-datepicker .at-datepicker-header > button{float: left;margin-left:0; margin-top: -10px;border-right: 1px solid #d2d2d2; height: 30px;}
+at-date .at-datepicker .at-datepicker-header > button i{color:#c4d600;}
+
+at-date .at-datepicker .at-datepicker-header .at-direction{font-size: 11px;position: absolute;cursor:pointer;}
+at-date .at-datepicker .at-datepicker-header .at-direction:hover{color:#999;}
+at-date .at-datepicker .at-datepicker-header .at-direction.at-direction-left{left: 34px; top: 1px; padding: 10px 8px;}
+at-date .at-datepicker .at-datepicker-header .at-direction.at-direction-right{right: 18px; top:1px; padding: 10px 8px;}
+
+at-date .at-datepicker .at-datepicker-header .at-datepicker-title{cursor: default;text-transform:uppercase;color:#575757;margin-right: 15px;}
+at-date .at-datepicker .at-datepicker-calendar{width: 100%;margin:0!important;background-color:#f7f7f7!important;}
+at-date .at-datepicker .at-datepicker-calendar thead{padding-bottom: 5px;}
+at-date .at-datepicker .at-datepicker-calendar thead, at-datepicker .at-datepicker .at-datepicker-calendar tbody{margin:0 5px;display:block;}
+at-date .at-datepicker .at-datepicker-calendar th{cursor: default;width: 28px;font-weight: bold;text-align: center;}
+at-date .at-datepicker .at-datepicker-calendar tr{display: inline-block;}
+at-date .at-datepicker .at-datepicker-calendar td{width: 28px!important;text-align: right;cursor:pointer;}
+at-date .at-datepicker .at-datepicker-calendar td.at-datepicker-today{background-color: #e5e8b5;} /* pendiente definir clase para fecha actual */
+at-date .at-datepicker .at-datepicker-calendar td a{display: inline-block;width:28px;font-size: 11px!important;color: #017a99;padding:0 6px 2px 0;}
+at-date .at-datepicker .at-datepicker-calendar td:hover{background-color: #968271;}
+at-date .at-datepicker .at-datepicker-calendar td:hover a{color:#fff!important;}
+at-date .at-datepicker .at-datepicker-calendar .weekend a{color:#000!important;}
+at-date .at-datepicker .at-datepicker-calendar .outMonth a{color:#939393!important;}
+at-date .at-datepicker .at-datepicker-calendar .weekendCurrent{background-color:#e5e8b5;color:#000!important;}
+at-date .at-datepicker .at-datepicker-calendar .inMonthCurrent{background-color:#e5e8b5; }
+at-date .at-datepicker .at-datepicker-calendar a{text-decoration: underline;}
+at-date .at-datepicker-trigger{width: 30px;position: relative;display: inline-block;vertical-align: top;margin-left: -10px;transition:.3s;}
+at-date .at-datepicker-trigger:hover i:before{color:#999!important;transition:.3s;}
+at-date .at-datepicker .at-datepicker-calendar tfoot{font-size: 13px;background-color: transparent!important;border-top: 1px solid #d2d2d2;height:35px; display: block;margin-top:5px;}
+at-date .at-datepicker .at-datepicker-calendar tfoot tr{display: block!important;}
+at-date .at-datepicker .at-datepicker-calendar tfoot tr td{margin-top: 10px;color: #017a99;text-decoration: underline;}
+at-date .at-datepicker .at-datepicker-calendar tfoot tr td:hover{text-decoration: none;color:#939393;background-color: transparent!important;}
+at-date .at-datepicker .at-datepicker-calendar tfoot tr td:first-child{float:left;margin-left: 13px;}
+at-date .at-datepicker .at-datepicker-calendar tfoot tr td:last-child{float:right;margin-right: 13px;}

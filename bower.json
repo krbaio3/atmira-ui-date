@@ -1,0 +1,11 @@
+{
+    "name": "atmira-ui-date",
+    "dependencies": {
+        "moment": "latest"
+    },
+    "main": [
+        "./dist/atmiraDatepicker.js",
+        "./dist/atmiraDatepicker.html",
+        "./dist/atmiraDatepicker.css"
+    ]
+}
