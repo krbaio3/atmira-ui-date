@@ -1,0 +1,194 @@
+at-date {
+  position: relative;
+  > {
+    button {
+      vertical-align: top;
+      margin-top: 5px;
+    }
+    div {
+      display: inline-block !important;
+    }
+  }
+  input {
+    height: 25px !important;
+    font-size: 11px !important;
+    width: 85px;
+    border: 1px solid #dadada;
+    padding: 2px 5px !important;
+    color: #35261a;
+    box-shadow: none;
+  }
+  .at-datepicker {
+    position: absolute !important;
+    top: -3px !important;
+    left: 82px !important;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: #f7f7f7;
+    font-size: 12px;
+    box-shadow: 3px 4px 5px 0 #c4c4c4;
+    border: 1px solid #d2d2d2;
+    width: 208px;
+    z-index: 10;
+    .at-datepicker-header {
+      padding: 10px 0 5px 0;
+      border-bottom: 1px solid #d2d2d2;
+      text-align: center;
+      margin-bottom: 5px;
+      .bki-close {
+        font-size: 10px;
+        position: absolute;
+        right: 3px;
+        top: 2px;
+        cursor: pointer;
+        &:hover:before {
+          background-color: #968271;
+          color: #fff;
+        }
+      }
+      > button {
+        float: left;
+        margin-left: 0;
+        margin-top: -10px;
+        border-right: 1px solid #d2d2d2;
+        height: 30px;
+        i {
+          color: #c4d600;
+        }
+      }
+      .at-direction {
+        font-size: 11px;
+        position: absolute;
+        cursor: pointer;
+        &:hover {
+          color: #999;
+        }
+        &.at-direction-left {
+          left: 34px;
+          top: 1px;
+          padding: 10px 8px;
+        }
+        &.at-direction-right {
+          right: 18px;
+          top: 1px;
+          padding: 10px 8px;
+        }
+      }
+      .at-datepicker-title {
+        cursor: default;
+        text-transform: uppercase;
+        color: #575757;
+        margin-right: 15px;
+      }
+    }
+    .at-datepicker-calendar {
+      width: 100%;
+      margin: 0 !important;
+      background-color: #f7f7f7 !important;
+      thead {
+        padding-bottom: 5px;
+        margin: 0 5px;
+        display: block;
+      }
+    }
+  }
+}
+
+at-datepicker .at-datepicker .at-datepicker-calendar tbody {
+  margin: 0 5px;
+  display: block;
+}
+
+at-date {
+  .at-datepicker .at-datepicker-calendar {
+    th {
+      cursor: default;
+      width: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+    tr {
+      display: inline-block;
+    }
+    td {
+      width: 28px !important;
+      text-align: right;
+      cursor: pointer;
+      &.at-datepicker-today {
+        background-color: #e5e8b5;
+      }
+      a {
+        display: inline-block;
+        width: 28px;
+        font-size: 11px !important;
+        color: #017a99;
+        padding: 0 6px 2px 0;
+      }
+      &:hover {
+        background-color: #968271;
+        a {
+          color: #fff !important;
+        }
+      }
+    }
+    .weekend a {
+      color: #000 !important;
+    }
+    .outMonth a {
+      color: #939393 !important;
+    }
+    .weekendCurrent {
+      background-color: #e5e8b5;
+      color: #000 !important;
+    }
+    .inMonthCurrent {
+      background-color: #e5e8b5;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+  .at-datepicker-trigger {
+    width: 30px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -10px;
+    transition: .3s;
+    &:hover i:before {
+      color: #999 !important;
+      transition: .3s;
+    }
+  }
+  .at-datepicker .at-datepicker-calendar tfoot {
+    font-size: 13px;
+    background-color: transparent !important;
+    border-top: 1px solid #d2d2d2;
+    height: 35px;
+    display: block;
+    margin-top: 5px;
+    tr {
+      display: block !important;
+      td {
+        margin-top: 10px;
+        color: #017a99;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+          color: #939393;
+          background-color: transparent !important;
+        }
+        &:first-child {
+          float: left;
+          margin-left: 13px;
+        }
+        &:last-child {
+          float: right;
+          margin-right: 13px;
+        }
+      }
+    }
+  }
+}
+
+/* pendiente definir clase para fecha actual */
