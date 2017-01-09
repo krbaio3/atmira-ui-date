@@ -17,6 +17,14 @@ at-date {
     padding: 2px 5px !important;
     color: #35261a;
     box-shadow: none;
+    &[type="text"][disabled] {
+      cursor: default;
+      color: #aaa !important;
+      &::-webkit-input-placeholder {
+        cursor: default;
+        color: #aaa !important;
+      }
+    }
   }
   .at-datepicker {
     position: absolute !important;
@@ -188,6 +196,10 @@ at-date {
         }
       }
     }
+  }
+  .invalid-date {
+    color: #000 !important;
+    -webkit-text-fill-color: #f00;
   }
 }
 

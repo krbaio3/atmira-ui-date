@@ -1,0 +1,20 @@
+{
+  "name": "atmira-ui-date",
+  "dependencies": {
+    "moment": "latest"
+  },
+  "main": [
+    "./dist/atmiraDatepicker.js",
+    "./dist/atmiraDatepicker.html",
+    "./dist/atmiraDatepicker.css"
+  ],
+  "_release": "99f35bfa8c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "99f35bfa8cbb64bf8d3e0ce7e2202b942c2856ad"
+  },
+  "_source": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-ui-date.git",
+  "_target": "*",
+  "_originalSource": "https://Atmira-Front-End@bitbucket.org/Atmira-Front-End/atmira-ui-date.git"
+}

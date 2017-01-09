@@ -1,28 +1,11 @@
 {
-  "name": "atmira-ui-date",
-  "version": "1.0.1",
-  "description": "AngularJS component for ui-date",
-  "main": [
-    "dist/atmiraDatepicker.html",
-    "dist/atmiraDatepicker.js",
-    "dist/atmiraDatepicker.scss"
-  ],
-  "license": "MIT",
-  "authors": [
-    "Atmira FrontEnd"
-  ],
-  "homepage": "https://github.com/krbaio3/atmira-ui-date",
-  "keywords": [
-    "atmira",
-    "atmira-ui-date",
-    "date"
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "private": true
+    "name": "atmira-ui-date",
+    "dependencies": {
+        "moment": "latest"
+    },
+    "main": [
+        "./dist/atmiraDatepicker.js",
+        "./dist/atmiraDatepicker.html",
+        "./dist/atmiraDatepicker.css"
+    ]
 }

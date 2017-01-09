@@ -1,29 +1,29 @@
-<input type="text" maxlength="10" ng-value="viewValue" placeholder="viewPlaceholder" ng-model="viewValue" class="at-datepicker-input" ng-class="{required: !viewValue}">
-<button type="button" class="at-datepicker-trigger" ng-click="showCalendar()" ng-blur="closeCalendar()"><i class="bki-schedule"></i></button>
+<input type="text" maxlength="10"  ng-value="$ctrl.viewValue" placeholder="{{$ctrl.viewPlaceholder}}"  ng-disabled="$ctrl.atDisabled" ng-model="$ctrl.viewValue" ng-class="{'invalid-date': $ctrl.invalid}" class="at-datepicker-input" ng-required="$ctrl.atRequired">
+<button type="button" class="at-datepicker-trigger" ng-click="$ctrl.showCalendar()" ng-disabled="$ctrl.atDisabled" ng-blur="$ctrl.closeCalendar()"><i class="bki-schedule"></i></button>
 
-<div class="at-datepicker" ng-show="calendarOpened">
-  <div class="at-datepicker-header">
-      <button type="button" class="at-datepicker-trigger" ng-click="showCalendar()"><i class="bki-schedule"></i></button>
-      <i class="bki-month-previous at-direction-left at-direction" ng-mousedown="prevMonth()"></i>
-      <span class="at-datepicker-title" ng-bind="dateValue"></span>
-      <i class="bki-month-next at-direction-right at-direction" ng-mousedown="nextMonth()"></i>
-      <span class="bki-close"></span>
-  </div>
-  <table class="at-datepicker-calendar">
-    <thead>
-      <tr >
-        <th ng-repeat="dn in dayNames track by $index"><span>{{ dn }}</span></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr  ng-repeat="d in days"><td  ng-class="d.class"><a ng-mousedown="selectDate($event, d)">{{ d.day }}</a></td></tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td ng-mousedown="prevYear()">{{pYear}}</td>
-        <td ng-mousedown="nextYear()">{{nYear}}</td>
+<div class="at-datepicker" ng-show="$ctrl.calendarOpened">
+<div class="at-datepicker-header">
+    <button type="button" class="at-datepicker-trigger" ng-click="$ctrl.showCalendar()"><i class="bki-schedule"></i></button>
+    <i class="bki-month-previous at-direction-left at-direction" ng-mousedown="$ctrl.prevMonth()"></i>
+    <span class="at-datepicker-title" ng-bind="$ctrl.dateValue"></span>
+    <i class="bki-month-next at-direction-right at-direction" ng-mousedown="$ctrl.nextMonth()"></i>
+    <span class="bki-close"></span>
+</div>
+<table class="at-datepicker-calendar">
+  <thead>
+    <tr >
+      <th ng-repeat="dn in $ctrl.dayNames track by $index"><span>{{ dn }}</span></th>
     </tr>
-    </tfoot>
-  </table>
+  </thead>
+  <tbody>
+    <tr  ng-repeat="d in $ctrl.days"><td  ng-class="d.class"><a ng-mousedown="$ctrl.selectDate($event, d)">{{ d.day }}</a></td></tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td ng-mousedown="$ctrl.prevYear()">{{pYear}}</td>
+      <td ng-mousedown="$ctrl.nextYear()">{{nYear}}</td>
+  </tr>
+  </tfoot>
+</table>
 
 </div>
