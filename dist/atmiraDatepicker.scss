@@ -28,7 +28,7 @@ at-date {
   }
   .at-datepicker {
     position: absolute !important;
-    top: -3px !important;
+    top: -5px !important;
     left: 82px !important;
     box-sizing: border-box;
     font-family: sans-serif;
@@ -56,10 +56,9 @@ at-date {
       }
       > button {
         float: left;
-        margin-left: 0;
-        margin-top: -10px;
+        margin-top: -6px;
         border-right: 1px solid #d2d2d2;
-        height: 30px;
+        padding: 0px 6px;
         i {
           color: #c4d600;
         }
@@ -157,11 +156,10 @@ at-date {
     }
   }
   .at-datepicker-trigger {
-    width: 30px;
+    width: auto;
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin-left: -10px;
     transition: .3s;
     &:hover i:before {
       color: #999 !important;

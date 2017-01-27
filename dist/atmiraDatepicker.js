@@ -30,7 +30,12 @@
 		vm.atRequired = vm.atRequired !== undefined ? vm.atRequired : null;
 		vm.atDisabled = vm.atDisabled !== undefined ? vm.atDisabled : null;
 
-		vm.invalid = vm.selected ? false : true;
+		if(vm.selected !== undefined || vm.selected !== '') {
+			vm.invalid = false;
+		}else {
+			vm.invalid = true;
+		}
+
 		vm.calendarOpened = false;
 		vm.days = [];
 		vm.dayNames = [];
