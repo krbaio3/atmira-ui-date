@@ -117,6 +117,9 @@ at-date {
     tr {
       display: inline-block;
     }
+    tbody tr {
+      width: 28px;
+    }
     td {
       width: 28px !important;
       text-align: right;
