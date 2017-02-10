@@ -1,6 +1,6 @@
 {
     "name": "atmira-ui-date",
-    "version": "2.1.0",
+    "version": "3.0.1",
     "description": "AngularJS component for ui-date",
     "main": [
         "dist/atmiraDatepicker.html",

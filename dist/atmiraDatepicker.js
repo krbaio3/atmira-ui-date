@@ -30,6 +30,8 @@
 		vm.atRequired = vm.atRequired !== undefined ? vm.atRequired : null;
 		vm.atDisabled = vm.atDisabled !== undefined ? vm.atDisabled : null;
 
+		var initRequired = vm.required;
+
 		if(vm.selected !== undefined || vm.selected !== '') {
 			vm.invalid = false;
 		}else {
@@ -54,7 +56,9 @@
 			var macth = pattern.test(vm.viewValue);
 			$scope.$apply(function(){
 				vm.selected = vm.viewValue ;
-				vm.atRequired = el[0].value.length > 0 ? false: true;
+				if(initRequired){
+					vm.atRequired = el[0].value.length > 0 ? false: true;
+				}
 				vm.invalid = macth ? false : true;
 			});
 		});
