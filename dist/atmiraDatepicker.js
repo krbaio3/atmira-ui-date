@@ -30,13 +30,7 @@
 		vm.atRequired = vm.atRequired !== undefined ? vm.atRequired : null;
 		vm.atDisabled = vm.atDisabled !== undefined ? vm.atDisabled : null;
 
-		var initRequired = vm.required;
-
-		if(vm.selected !== undefined || vm.selected !== '') {
-			vm.invalid = false;
-		}else {
-			vm.invalid = true;
-		}
+		vm.invalid = (vm.selected !== undefined || vm.selected !== '') ? false : true;
 
 		vm.calendarOpened = false;
 		vm.days = [];
@@ -44,22 +38,38 @@
 		vm.pYear = '';
 		vm.nYear = '';
 		vm.close = true;
-
+		var empty;
 		moment.updateLocale('es', {
 			weekdaysMin : ['D','L', 'M', 'M', 'J', 'V', 'S']
 		});
+
+		vm.$onChanges = function (changesObj) {
+			if (changesObj.hasOwnProperty('atRequired')){
+				if(changesObj.atRequired.hasOwnProperty('currentValue')){
+					if(!changesObj.atRequired.currentValue){
+						if(empty){
+							vm.invalid = false;
+						}
+					}
+				}
+			}
+		};
 
 		//comprobaciones de fecha valida
 		var pattern = /^([0-2]\d|3[0-1])\/(0\d|1[0-2])\/[1-2]\d\d\d/;
 		var el = angular.element($element).find('input');
 		el.on('keyup', function(){
+			empty = el[0].value.length === 0 ? true : false;
 			var macth = pattern.test(vm.viewValue);
 			$scope.$apply(function(){
-				vm.selected = vm.viewValue ;
-				if(initRequired){
-					vm.atRequired = el[0].value.length > 0 ? false: true;
-				}
+				vm.selected = vm.viewValue;
 				vm.invalid = macth ? false : true;
+				if(empty && vm.atRequired === true){
+					vm.invalid = true;
+				}
+				if(empty && vm.atRequired === false){
+					vm.invalid = false;
+				}
 			});
 		});
 
@@ -265,7 +275,6 @@
 
 		vm.selectDate = function (event, date) {
 			event.preventDefault();
-			vm.atRequired = false;
 			var selectedDate = moment(date.day + '.' + date.month + '.' + date.year, 'DD/MM/YYYY');
 			vm.selected = selectedDate.format(vm.format);
 			vm.viewValue = selectedDate.format(vm.viewFormat);
