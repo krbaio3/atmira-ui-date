@@ -27,10 +27,10 @@
 		// vm.firstWeekDaySunday = vm.$eval(attrs.firstWeekDaySunday) || false;
 		vm.atPlaceholder = vm.atPlaceholder !== undefined ? vm.atPlaceholder : null;
 		vm.viewValue = vm.viewValue !== undefined ? vm.viewValue : null;
-		vm.atRequired = vm.atRequired !== undefined ? vm.atRequired : null;
-		vm.atDisabled = vm.atDisabled !== undefined ? vm.atDisabled : null;
+
 
 		vm.invalid = (vm.selected !== undefined || vm.selected !== '') ? false : true;
+		var required = null;
 
 		vm.calendarOpened = false;
 		vm.days = [];
@@ -45,6 +45,7 @@
 
 		vm.$onChanges = function (changesObj) {
 			if (changesObj.hasOwnProperty('atRequired')){
+				required = vm.atRequired;
 				if(changesObj.atRequired.hasOwnProperty('currentValue')){
 					if(!changesObj.atRequired.currentValue){
 						if(empty){
@@ -61,9 +62,27 @@
 		el.on('keyup', function(){
 			empty = el[0].value.length === 0 ? true : false;
 			var macth = pattern.test(vm.viewValue);
+			var date ={
+				day: null,
+				month: null,
+				year: null
+			};
 			$scope.$apply(function(){
 				vm.selected = vm.viewValue;
 				vm.invalid = macth ? false : true;
+				if(macth){
+					var dateSplited = vm.viewValue.split('/');
+					date.day = dateSplited[0];
+					date.month = dateSplited[1];
+					date.year = dateSplited[2];
+					var selectedDate = moment(date.day + '.' + date.month + '.' + date.year, 'DD/MM/YYYY');
+					vm.selected = selectedDate.format(vm.format);
+					vm.atRequired = false;
+				}else{
+					console.log('entro');
+					vm.atRequired = required ? true: false;
+				}
+
 				if(empty && vm.atRequired === true){
 					vm.invalid = true;
 				}
@@ -281,6 +300,7 @@
 			vm.viewValue2 = selectedDate.format('M');
 			vm.close = true;
 			vm.invalid = false;
+			vm.atRequired = false;
 			vm.closeCalendar();
 		};
 
