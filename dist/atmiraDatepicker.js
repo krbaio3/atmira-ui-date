@@ -59,7 +59,15 @@
 		//comprobaciones de fecha valida
 		var pattern = /^([0-2]\d|3[0-1])\/(0\d|1[0-2])\/[1-2]\d\d\d/;
 		var el = angular.element($element).find('input');
-		el.on('keyup', function(){
+		el.on('keyup', function(e){
+			if(e.which !== 8) {
+				var numChars = el[0].value.length;
+				if(numChars === 2 || numChars === 5){
+					var thisVal = el[0].value;
+					thisVal += '/';
+					el[0].value = thisVal;
+				}
+			}
 			empty = el[0].value.length === 0 ? true : false;
 			var macth = pattern.test(vm.viewValue);
 			var date ={
